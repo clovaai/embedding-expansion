@@ -1,0 +1,6 @@
+mxnet-cu101
+numpy
+tqdm
+tensorflow-cpu
+gluoncv
+gluoncv2

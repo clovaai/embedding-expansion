@@ -1,0 +1,17 @@
+# large dataset
+data
+
+# dev related things
+.ipynb_checkpoints
+__pycache__
+*.swp
+*.pyc
+tags
+
+# exported models
+*.params
+*.json
+*.onnx
+
+# for test
+test
