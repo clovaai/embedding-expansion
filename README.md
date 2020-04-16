@@ -4,7 +4,7 @@ Official MXNet implementation of Embedding Expansion: Augmentation in Embedding 
 
 **Byungsoo Ko\*, Geonmo Gu\*** (* Authors contributed equally.)
 
-@Clova Vision, NAVER/LINE Corp.
+@NAVER/LINE Vision.
 
 - [Paper](https://arxiv.org/abs/2003.02546) | [Supplementary Video](https://www.youtube.com/watch?v=5msMSXyQZ5U)
 
