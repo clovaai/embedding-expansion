@@ -6,7 +6,8 @@ Official MXNet implementation of Embedding Expansion: Augmentation in Embedding 
 
 @NAVER/LINE Vision
 
-- [Paper](https://arxiv.org/abs/2003.02546) | [Supplementary Video](https://www.youtube.com/watch?v=5msMSXyQZ5U)
+- [Paper](https://arxiv.org/abs/2003.02546) | [Supplementary Video](https://www.youtube.com/watch?v=5msMSXyQZ5U) | [PPT](https://www.slideshare.net/ByungSooKo1/cvpr2020-embedding-expansion-augmentation-in-embedding-space-for-deep-metric-learning-ppt) | [Poster](https://www.slideshare.net/ByungSooKo1/cvpr2020-embedding-expansion-augmentation-in-embedding-space-for-deep-metric-learning-poster)
+
 
 ## Overview
 ### Embedding Expansion
