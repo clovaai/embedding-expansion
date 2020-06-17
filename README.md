@@ -47,6 +47,7 @@ $ tar -xvzf car_ims.tgz -C data/CARS_196
 
 - **Available losses**: HPHN-triplet, EE + HPHN-triplet
   - Best recall@1 of EE + HPHN-triplet: 0.745 (0.716 in paper)
+- Note: The meaning of *epoch* in the paper and implementation is 'number of classes * number of instance per class'. So, the total epochs can be seen unusually high but it does not indicate slow convergence.
 
 ```
 # EE + HPHN-triplet (n_inner_points=2)
