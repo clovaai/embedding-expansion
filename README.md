@@ -39,7 +39,7 @@ $ pip3 install -r requirements.txt
 
 ```
 $ mkdir -p data/CARS_196
-$ wget http://imagenet.stanford.edu/internal/car196/car_ims.tgz
+$ wget http://ai.stanford.edu/~jkrause/car196/car_ims.tgz
 $ tar -xvzf car_ims.tgz -C data/CARS_196
 ```
 
