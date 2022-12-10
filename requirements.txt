@@ -1,6 +1,7 @@
-mxnet-cu101
+torch == 1.7.0
+pytorch-metric-learning >= v0.9.90
 numpy
+scikit-learn
+torchvision == 0.8.1
 tqdm
-tensorflow-cpu
-gluoncv
-gluoncv2
+wandb
