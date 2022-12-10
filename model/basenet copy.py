@@ -15,8 +15,6 @@ from gluoncv2.model_provider import get_model as gcv2_get_model, _models as gcv2
 
 from pprint import pprint
 
-import torch
-from googlenet import googlenet
 
 class Backbone(mx.gluon.HybridBlock):
     def __init__(self, name, ctx):
@@ -25,9 +23,13 @@ class Backbone(mx.gluon.HybridBlock):
         name = name.lower()     #googlenet
 
         try:
-            net = torch.hub.load('pytorch/vision:v0.10.0', 'googlenet', pretrained=True)
+            net = model_zoo.get_model(name, ctx=ctx, pretrained=True)
         except ValueError as e1:
-            print('backbone not loaded')
+            try:
+                net = gcv2_get_model(name, ctx=ctx, pretrained=True)
+            except ValueError:
+                e2 = '%s' % ('\n\t'.join(sorted(gcv2_models.keys())))
+                raise ValueError('{}\n\t{}'.format(e1, e2))
 
         with net.name_scope():
             self.base = mx.gluon.nn.HybridSequential('')
