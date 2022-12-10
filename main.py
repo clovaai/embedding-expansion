@@ -138,7 +138,7 @@ def main():
     args.recallk = [int(k) for k in args.recallk.split(',')]
 
     os.environ['CUDA_VISIBLE_DEVICES'] = str(args.gpu_idx)
-    args.ctx = [mx.gpu(0)]
+    args.ctx = [mx.cpu()]
 
     print(args)
     
