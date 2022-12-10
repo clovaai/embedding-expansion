@@ -8,18 +8,22 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import mxnet as mx
 import os
+import torch
+import torchvision
+import PIL.Image
+
+from torch.utils.data import Dataset
 
 
-class ImageData(mx.gluon.data.Dataset):
+class ImageData(Dataset):
     def __init__(self, dataset, transform):
         self.dataset = dataset
         self.transform = transform
 
     def __getitem__(self, item):
         image, instance_id, category_id, view_id, bbox = self.dataset[item]        
-        image = mx.image.imread(image)
+        image = PIL.Image.open(image)
 
         if bbox is not None:
             x, y, w, h = bbox

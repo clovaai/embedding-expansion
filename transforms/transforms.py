@@ -8,11 +8,10 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import mxnet as mx
 import numpy as np
 import random
 
-from mxnet.gluon.data.vision import transforms
+from torchvision import transforms
 
 
 class Random2DTranslation(object):
@@ -32,7 +31,7 @@ class Random2DTranslation(object):
         y_maxrange = new_height - self.height
         x1 = int(round(random.uniform(0, x_maxrange)))
         y1 = int(round(random.uniform(0, y_maxrange)))
-        croped_img = mx.image.fixed_crop(resized_img, x1, y1, self.width, self.height)
+        croped_img = transforms.fixed_crop(resized_img, x1, y1, self.width, self.height)
         return croped_img
 
 
@@ -41,7 +40,7 @@ class Transforms(object):
         if is_train:
             self.T = transforms.Compose([
                          Random2DTranslation(width, height),
-                         transforms.RandomFlipLeftRight(),
+                         transforms.RandomHorizontalFlip(),
                          transforms.ToTensor(),
                          transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
                      ])

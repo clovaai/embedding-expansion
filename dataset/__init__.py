@@ -11,7 +11,7 @@ from __future__ import unicode_literals
 from .sampler import RandomSampler
 from .dataset import Dataset, ImageData
 
-import mxnet as mx
+import torch
 import os
 
 
@@ -21,16 +21,16 @@ def get_train_data_loader(dataset, num_identities, train_transform, batch_size, 
                             num_instances,
                             max_num_examples_per_iter=num_instances*num_identities)
 
-    train_loader = mx.gluon.data.DataLoader(
+    train_loader = torch.utils.data.DataLoader(
         ImageData(dataset, train_transform),
         sampler=sampler,
-        batch_size=batch_size, num_workers=num_workers, last_batch='discard'
+        batch_size=batch_size, num_workers=num_workers, drop_last=True
     )
     return train_loader
 
 
 def get_test_data_loader(dataset, test_transform, batch_size, num_workers):
-    test_loader = mx.gluon.data.DataLoader(
+    test_loader = torch.utils.data.DataLoader(
         ImageData(dataset, test_transform),
         batch_size=batch_size, num_workers=num_workers,
     )

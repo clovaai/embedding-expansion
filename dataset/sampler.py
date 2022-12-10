@@ -8,13 +8,12 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import mxnet as mx
 import numpy as np
 
 from collections import defaultdict
+from torch.utils.data.sampler import Sampler
 
-
-class RandomSampler(mx.gluon.data.Sampler):
+class RandomSampler(Sampler):
     def __init__(self, dataset, batch_size, num_images_per_id=4, max_num_examples_per_iter=None):
         self.dataset = dataset
         self.batch_size = batch_size
