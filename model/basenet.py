@@ -175,8 +175,8 @@ class BasicConv2d(nn.Module):
 
 
 class Model(nn.Module):
-    def __init__(self, embedding_size, ctx, pretrained=True, is_norm=True, bn_freeze = True):
-        super(googlenet, self).__init__()
+    def __init__(self, embedding_size, pretrained=True, is_norm=True, bn_freeze = True):
+        super(Model, self).__init__()
 
         self.model = GoogLeNet()
         if pretrained:
